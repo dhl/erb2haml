@@ -1,17 +1,17 @@
 About
 =====
-haml.rake is a simple rake script for Rails that converts all ERb files in APP _ HOME/app/views/ that hasn't already been converted to haml.
+**erb2haml** is a simple rake script for Rails that converts all ERB files in `APP\_HOME/app/views/` that hasn't already been converted to haml.
 
-It will leave all your origional ERB files along, just to be sure.
+It will leave all your origional ERB files alone, just to be sure.
 
 To use it, make sure you are inside your Rails app, then do
 
-> $ rake haml:convert _ erbs
+    rake haml:convert\_erbs
 
 Getting Started
 ===============
-1. Put the script inside lib/script of your Rails app.
-2. Run "rake haml:convert _ erbs"
+1. Put the script `haml.rake` inside `lib/script` of your Rails app.
+2. Run `rake haml:convert\_erbs`
 3. Watch your ERB files getting converted to haml.
 
 And that's it!
@@ -28,7 +28,7 @@ TODO
 ====
 When I have more time, I'll package this up as a Rails plugin.
 
-Having the option to delete converted ERBs might be nice, too.
+For the brave among us, having the option to delete converted ERBs might be nice, too.
 
 License
 =======
