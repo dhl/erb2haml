@@ -1,5 +1,7 @@
 # encoding: utf-8
-require 'lib/erb2haml'
+
+$LOAD_PATH.unshift 'lib'
+require 'erb2haml'
 
 Gem::Specification.new do |s|
   s.name                = "erb2haml"
@@ -16,7 +18,7 @@ Gem::Specification.new do |s|
   s.files              += Dir.glob("{lib}/**/*")
   s.extra_rdoc_files    = %w[LICENSE README.md]
 
-  s.require_paths = ["lib"]
+  s.require_paths       = ["lib"]
   s.add_runtime_dependency "haml"
   s.add_runtime_dependency "hpricot"
   s.add_runtime_dependency "ruby_parser"
