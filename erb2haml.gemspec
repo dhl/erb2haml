@@ -1,11 +1,9 @@
 # encoding: utf-8
-
-$LOAD_PATH.unshift 'lib'
-require 'erb2haml'
+require File.expand_path("../lib/erb2haml/version", __FILE__)
 
 Gem::Specification.new do |s|
   s.name                = "erb2haml"
-  s.version             = ERb2Haml::VERSION
+  s.version             = "#{ERb2Haml::VERSION}"
   s.date                = Time.now.strftime('%Y-%m-%d')
   s.summary             = "Bulk ERB HTML to Haml conversion for Rails."
   s.description         = "Simple rake task to bulk covert ERB HAML files in a Rails app to Haml."

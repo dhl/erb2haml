@@ -1,11 +1,8 @@
 require 'rake'
+require File.expand_path('../lib/erb2haml/version', __FILE__)
 
-$LOAD_PATH.unshift 'lib'
-
-
-desc "Release gem"
+desc "Release gem #{ERb2Haml::VERSION}"
 task :release do
-  require 'erb2haml'
   system "git tag -a #{ERb2Haml::VERSION} -m 'Tagging #{ERb2Haml::VERSION}'" 
   system "git push --tags"
   system "gem push erb2haml-#{ERb2Haml::VERSION}.gem"

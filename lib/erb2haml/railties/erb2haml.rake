@@ -1,3 +1,5 @@
+require 'find'
+
 RED_FG ="\033[31m"
 GREEN_FG = "\033[32m"
 END_TEXT_STYLE = "\033[0m"
