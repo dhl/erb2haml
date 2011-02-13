@@ -18,13 +18,6 @@ Getting Started
 
 And that's it!
 
-    Either add the line `gem "erb2haml", :group => :development` to your Gemfile, or
-
-    group :development do
-      gem "erb2haml"         # Add this line
-    end
-
-
 Copyright
 ---------
 Copyright (c) 2011 David Leung. See LICENSE for further details.
