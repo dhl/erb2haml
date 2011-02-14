@@ -1,6 +1,8 @@
 erb2haml
 ========
-**erb2haml** adds a simple rake task to your Rails app that converts all ERB HTML files in `APP_HOME/app/views/` that hasn't already been converted to haml.
+**erb2haml** adds a simple rake task to your Rails app to converts all ERb HTML files in `APP_HOME/app/views/` to Haml.
+
+Existing Haml files are untouched.
 
 Getting Started
 ---------------
