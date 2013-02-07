@@ -16,7 +16,7 @@ Getting Started
           ...
         end
 
-2. Run `rake haml:convert_erbs`
+2. Run `rake haml:convert_erbs` to convert your ERB files without removing them, or run `rake haml:replace_erbs` to convert and replace your ERB files to your new HAML files.
 3. Watch your ERB files getting converted to haml.
 
 And that's it!
