@@ -23,4 +23,4 @@ And that's it!
 
 License
 -------
-Copyright (c) 2011-2013 David Leung and [contributors](https://github.com/technomancy/leiningen/contributors). See LICENSE for further details.
+Copyright (c) 2011-2013 David Leung and [contributors](https://github.com/dhl/erb2haml/contributors). See LICENSE for further details.
