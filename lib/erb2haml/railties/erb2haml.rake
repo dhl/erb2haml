@@ -16,14 +16,14 @@ namespace :haml do
     if `which html2haml`.empty?
       puts "#{color "ERROR: ", RED_FG} Could not find " +
          "#{color "html2haml", GREEN_FG} in your PATH. Aborting."
-      exit(false) 
+      exit(false)
     end
 
     puts "Looking for #{color "ERB", GREEN_FG} files to convert to " +
       "#{color("Haml", RED_FG)}..."
 
     Find.find("app/views/") do |path|
-      if FileTest.file?(path) and path.downcase.match(/\.html\.erb$/i)
+      if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
         haml_path = path.slice(0...-3)+"haml"
 
         unless FileTest.exists?(haml_path)
@@ -53,7 +53,7 @@ namespace :haml do
       "#{color("Haml", RED_FG)}..."
 
     Find.find("app/views/") do |path|
-      if FileTest.file?(path) and path.downcase.match(/\.html\.erb$/i)
+      if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
         haml_path = path.slice(0...-3)+"haml"
 
         unless FileTest.exists?(haml_path)

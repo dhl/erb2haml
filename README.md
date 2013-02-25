@@ -1,26 +1,36 @@
-erb2haml
-========
-**erb2haml** adds a simple rake task to your Rails app to converts all ERb HTML files in `APP_HOME/app/views/` to Haml.
+# erb2haml
 
-Existing Haml files are untouched.
+**erb2haml** gives your Rails app rake tasks to convert or replace all
+ERB view templates to [Haml](http://haml.info/).
 
-Getting Started
----------------
+## Getting Started
 
-1. Add `gem "erb2haml"` to the development group in your Gemfile.
+### Enabling the rake tasks
 
-    Either add the line `gem "erb2haml", :group => :development` to your `Gemfile`, or    
-        group :development do
-          ...
-          gem "erb2haml"         # Add this line
-          ...
-        end
+Add `gem "erb2haml"` to the development group in your `Gemfile`. You can
+do this by adding the line
 
-2. Run `rake haml:convert_erbs` to convert your ERB files without removing them, or run `rake haml:replace_erbs` to convert and replace your ERB files to your new HAML files.
-3. Watch your ERB files getting converted to haml.
+    `gem "erb2haml", :group => :development`
+    
+_or_ if you prefer the block syntax
 
-And that's it!
+    group :development do 
+      # ... 
+      gem "erb2haml"            # Add this line 
+      # ... 
+    end
 
-License
--------
+### ERB-to-Haml Template Conversion
+
+After enabling the rake tasks, you can convert your ERB templates to
+Haml in two ways, depending on whether you would like to keep the
+original ERB templates or not.
+
+| Keep the original ERBs? | Rake task to run         |
+| :---------------------: | ------------------------ |
+|           Yes           | `rake haml:replace_erbs` |
+|           No            | `rake haml:convert_erbs` |
+
+## License
+
 Copyright (c) 2011-2013 David Leung and [contributors](https://github.com/dhl/erb2haml/contributors). See LICENSE for further details.
