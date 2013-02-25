@@ -28,8 +28,8 @@ original ERB templates or not.
 
 | Keep the original ERBs? | Rake task to run         |
 | :---------------------: | ------------------------ |
-|           Yes           | `rake haml:replace_erbs` |
-|           No            | `rake haml:convert_erbs` |
+|           Yes           | `rake haml:convert_erbs` |
+|           No            | `rake haml:replace_erbs` |
 
 ## License
 
