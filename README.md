@@ -20,7 +20,7 @@ _or_ if you prefer the block syntax
       # ... 
     end
 
-### ERB-to-Haml Template Conversion
+### Converting ERB Templates to Haml
 
 After enabling the rake tasks, you can convert your ERB templates to
 Haml in two ways, depending on whether you would like to keep the
