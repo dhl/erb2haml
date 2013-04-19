@@ -16,7 +16,7 @@ namespace :haml do
     if `which html2haml`.empty?
       puts "#{color "ERROR: ", RED_FG} Could not find " +
          "#{color "html2haml", GREEN_FG} in your PATH. Aborting."
-      exit(false)
+      exit(false) 
     end
 
     puts "Looking for #{color "ERB", GREEN_FG} files to convert to " +
