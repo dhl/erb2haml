@@ -8,17 +8,21 @@ ERB view templates to [Haml](http://haml.info/).
 ### Enabling the rake tasks
 
 Add `gem "erb2haml"` to the development group in your `Gemfile`. You can
-do this by adding the line
+do this by adding to your Gemfile the line
 
-    `gem "erb2haml", :group => :development`
+```ruby
+gem "erb2haml", :group => :development
+```
     
 _or_ if you prefer the block syntax
 
-    group :development do 
-      # ... 
-      gem "erb2haml"            # Add this line 
-      # ... 
-    end
+```ruby
+group :development do 
+  # ... 
+  gem "erb2haml"            # Add this line 
+  # ... 
+end
+```
 
 ### Converting ERB Templates to Haml
 
