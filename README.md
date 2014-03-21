@@ -35,6 +35,12 @@ original ERB templates or not.
 |           Yes           | `rake haml:convert_erbs` |
 |           No            | `rake haml:replace_erbs` |
 
+By default, erb2haml looks for ERB templates inside `app/views` and additional `test/dummy/app/views` in case of an engine. If you have ERB templates inside another non-standard direcotry(e.g. `spec/dummy/app/views`) just pass the path to the rake task as an environment variable called `ERB_PATH`:
+
+```
+rake haml:convert_erbs ERB_PATH=spec/dummy/app/views
+```
+
 ## License
 
 Copyright (c) 2011-2013 David Leung and [contributors](https://github.com/dhl/erb2haml/contributors). See LICENSE for further details.
