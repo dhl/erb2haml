@@ -26,27 +26,33 @@ def check_html2haml
 end
 
 def erb2haml(path, options={remove: false})
-  Find.find(path) do |path|
-    if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
-      haml_path = path.slice(0...-3)+"haml"
+  begin
+    Find.find(path) do |path|
+      if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
+        haml_path = path.slice(0...-3)+"haml"
 
-      unless FileTest.exists?(haml_path)
-        print "Converting: #{path}... "
+        unless FileTest.exists?(haml_path)
+          print "Converting: #{path}... "
 
-        if system("html2haml", path, haml_path)
-          puts color("Done!", GREEN_FG)
-          if options[:remove] 
-            print "Removing: #{path}... "
-            if system("rm", path)
-              puts color("Removed!", GREEN_FG)
-            else
-              puts color("Removal failed!", RED_FG)
+          if system("html2haml", path, haml_path)
+            puts color("Done!", GREEN_FG)
+            if options[:remove] 
+              print "Removing: #{path}... "
+              if system("rm", path)
+                puts color("Removed!", GREEN_FG)
+              else
+                puts color("Removal failed!", RED_FG)
+              end
             end
+          else
+            puts color("Failed!", RED_FG)
           end
-        else
-          puts color("Failed!", RED_FG)
         end
       end
+    end
+  rescue
+    if ENV['ERB_PATH'] && ENV['ERB_PATH'] == path
+      puts color("Path #{path} not found!", RED_FG)
     end
   end
 end
