@@ -34,9 +34,7 @@ namespace :haml do
           else
             puts color("Failed!", RED_FG)
           end
-
         end
-
       end
     end
   end #End rake task
@@ -62,21 +60,18 @@ namespace :haml do
           if system("html2haml", path, haml_path)
             puts color("Done!", GREEN_FG)
             print "Removing: #{path}... "
+            
             if system("rm", path)
               puts color("Removed!", GREEN_FG)
             else
               puts color("Failed!", RED_FG)
             end
+            
           else
             puts color("Failed!", RED_FG)
           end
-
         end
-
       end
-
     end
   end #End rake task
-
 end # End of :haml namespace
-
