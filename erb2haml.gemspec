@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.email               = [ "david@davidslab.com" ]
   s.authors             = [ "David Leung" ]
   s.platform            = Gem::Platform::RUBY
+  s.license             = 'MIT'
 
   s.files               = %w[Gemfile Rakefile]
   s.files              += Dir.glob("{lib}/**/*")
