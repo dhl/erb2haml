@@ -1,4 +1,5 @@
 require 'find'
+require 'mkmf'
 
 RED_FG ="\033[31m"
 GREEN_FG = "\033[32m"
@@ -13,7 +14,7 @@ namespace :haml do
   desc "Perform bulk conversion of all html.erb files to Haml in views folder."
   task :convert_erbs do
 
-    if `which html2haml`.empty?
+    unless find_executable('html2haml')
       puts "#{color "ERROR: ", RED_FG} Could not find " +
          "#{color "html2haml", GREEN_FG} in your PATH. Aborting."
       exit(false) 
@@ -41,7 +42,7 @@ namespace :haml do
 
   desc "Perform bulk conversion of all html.erb files to Haml in views folder, then remove the converted html.erb files."
   task :replace_erbs do
-    if `which html2haml`.empty?
+    unless find_executable('html2haml')
       puts "#{color "ERROR: ", RED_FG} Could not find " +
          "#{color "html2haml", GREEN_FG} in your PATH. Aborting."
       exit(false)
