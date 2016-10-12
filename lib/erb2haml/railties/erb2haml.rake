@@ -12,7 +12,7 @@ end
 
 namespace :haml do
   desc "Perform bulk conversion of all html.erb files to Haml in views folder."
-  task :convert_erbs do
+  task :convert_erbs, [:path] do |t,args|
 
     unless find_executable('html2haml')
       puts "#{color "ERROR: ", RED_FG} Could not find " +
@@ -22,8 +22,9 @@ namespace :haml do
 
     puts "Looking for #{color "ERB", GREEN_FG} files to convert to " +
       "#{color("Haml", RED_FG)}..."
-
-    Find.find("app/views/") do |path|
+    
+    search_path = args.path.present? ? args.path : "app/views/"
+    Find.find(search_path) do |path|
       if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
         haml_path = path.slice(0...-3)+"haml"
 
@@ -41,7 +42,7 @@ namespace :haml do
   end #End rake task
 
   desc "Perform bulk conversion of all html.erb files to Haml in views folder, then remove the converted html.erb files."
-  task :replace_erbs do
+  task :replace_erbs, [:path] do |t,args|
     unless find_executable('html2haml')
       puts "#{color "ERROR: ", RED_FG} Could not find " +
          "#{color "html2haml", GREEN_FG} in your PATH. Aborting."
@@ -50,8 +51,9 @@ namespace :haml do
 
     puts "Looking for #{color "ERB", GREEN_FG} files to convert to " +
       "#{color("Haml", RED_FG)}..."
-
-    Find.find("app/views/") do |path|
+    
+    search_path = args.path..present? ? args.path : "app/views/"
+    Find.find(search_path) do |path|
       if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
         haml_path = path.slice(0...-3)+"haml"
 
