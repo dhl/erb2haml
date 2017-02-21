@@ -24,6 +24,11 @@ group :development do
 end
 ```
 
+If you use haml version 4.0 or over (>= 4.0), you need to add `html2haml` as well
+
+    `gem "html2haml", :group => :development`
+
+
 ### Converting ERB Templates to Haml
 
 After enabling the rake tasks, you can convert your ERB templates to
