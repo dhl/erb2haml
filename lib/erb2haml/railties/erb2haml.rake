@@ -27,7 +27,7 @@ namespace :haml do
       if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
         haml_path = path.slice(0...-3)+"haml"
 
-        unless FileTest.exists?(haml_path)
+        unless FileTest.exist?(haml_path)
           print "Converting: #{path}... "
 
           if system("html2haml", path, haml_path)
@@ -55,7 +55,7 @@ namespace :haml do
       if FileTest.file?(path) and path.downcase.match(/\.erb$/i)
         haml_path = path.slice(0...-3)+"haml"
 
-        unless FileTest.exists?(haml_path)
+        unless FileTest.exist?(haml_path)
           print "Converting: #{path}... "
 
           if system("html2haml", path, haml_path)
